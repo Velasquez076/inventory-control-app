@@ -1,7 +1,7 @@
 package com.inventory.control.pro.sprgbt.repository.postgres.category.port;
 
 import com.inventory.control.pro.sprgbt.domain.category.CategoryDomain;
-import com.inventory.control.pro.sprgbt.domain.category.PageDomain;
+import com.inventory.control.pro.sprgbt.domain.general.PageDomain;
 
 /*
  */

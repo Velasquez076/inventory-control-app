@@ -1,4 +1,4 @@
-package com.inventory.control.pro.sprgbt.repository.postgres.category;
+package com.inventory.control.pro.sprgbt.repository.postgres.category.util;
 
 import com.inventory.control.pro.sprgbt.utils.category.Direction;
 import java.util.Objects;

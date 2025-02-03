@@ -1,4 +1,4 @@
-package com.inventory.control.pro.sprgbt.domain.category;
+package com.inventory.control.pro.sprgbt.domain.general;
 
 import java.util.List;
 

@@ -4,7 +4,7 @@ import com.inventory.control.pro.sprgbt.controller.api.category.dto.CategoryRequ
 import com.inventory.control.pro.sprgbt.controller.api.category.dto.CategoryResponse;
 import com.inventory.control.pro.sprgbt.controller.api.category.dto.PageableResponse;
 import com.inventory.control.pro.sprgbt.domain.category.CategoryDomain;
-import com.inventory.control.pro.sprgbt.domain.category.PageDomain;
+import com.inventory.control.pro.sprgbt.domain.general.PageDomain;
 import org.mapstruct.Mapper;
 
 /*

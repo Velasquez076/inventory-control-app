@@ -69,7 +69,6 @@ class CategoryController {
     var response = mapperInput.toResponse(category);
     return new ResponseEntity<>(new WrapperResponse<>(CategoryMessages.UPDATE_SUCCESS.getCode(),
         CategoryMessages.UPDATE_SUCCESS.getMessage(), response), HttpStatus.OK);
-
   }
 }
 

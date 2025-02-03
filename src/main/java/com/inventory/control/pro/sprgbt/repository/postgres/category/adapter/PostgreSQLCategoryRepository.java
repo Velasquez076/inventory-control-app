@@ -1,11 +1,11 @@
 package com.inventory.control.pro.sprgbt.repository.postgres.category.adapter;
 
-import static com.inventory.control.pro.sprgbt.repository.postgres.category.ValidationUtil.validateDirection;
-import static com.inventory.control.pro.sprgbt.repository.postgres.category.ValidationUtil.validatePage;
-import static com.inventory.control.pro.sprgbt.repository.postgres.category.ValidationUtil.validateSize;
+import static com.inventory.control.pro.sprgbt.repository.postgres.category.util.ValidationUtil.validateDirection;
+import static com.inventory.control.pro.sprgbt.repository.postgres.category.util.ValidationUtil.validatePage;
+import static com.inventory.control.pro.sprgbt.repository.postgres.category.util.ValidationUtil.validateSize;
 
 import com.inventory.control.pro.sprgbt.domain.category.CategoryDomain;
-import com.inventory.control.pro.sprgbt.domain.category.PageDomain;
+import com.inventory.control.pro.sprgbt.domain.general.PageDomain;
 import com.inventory.control.pro.sprgbt.exception.category.CategoryException;
 import com.inventory.control.pro.sprgbt.repository.postgres.category.dao.CategoryDao;
 import com.inventory.control.pro.sprgbt.repository.postgres.category.entity.CategoryEntity;

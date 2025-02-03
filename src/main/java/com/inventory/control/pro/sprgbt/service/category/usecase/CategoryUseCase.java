@@ -1,7 +1,7 @@
 package com.inventory.control.pro.sprgbt.service.category.usecase;
 
 import com.inventory.control.pro.sprgbt.domain.category.CategoryDomain;
-import com.inventory.control.pro.sprgbt.domain.category.PageDomain;
+import com.inventory.control.pro.sprgbt.domain.general.PageDomain;
 import com.inventory.control.pro.sprgbt.repository.postgres.category.port.CategoryRepository;
 import com.inventory.control.pro.sprgbt.service.category.port.CategoryService;
 
