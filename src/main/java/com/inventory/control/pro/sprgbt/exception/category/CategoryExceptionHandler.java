@@ -18,9 +18,9 @@ public class CategoryExceptionHandler {
   ResponseEntity<WrapperResponse<Throwable>> error(CategoryException categoryException) {
     log.error("{}", categoryException.getMessage(), categoryException);
     return new ResponseEntity<>(
-        new WrapperResponse<>(ErrorMessages.CATEGORY_ALREADY_EXIST.getCode(),
-            ErrorMessages.CATEGORY_ALREADY_EXIST.getMessage(),
-            categoryException.getCause()), HttpStatus.BAD_REQUEST);
+        new WrapperResponse<>(categoryException.getCode(),
+            categoryException.getMessage(),
+            categoryException.getCause()), buildStatus(categoryException.getCode()));
   }
 
   @ExceptionHandler(value = Exception.class)
@@ -30,5 +30,9 @@ public class CategoryExceptionHandler {
         new WrapperResponse<>(ErrorMessages.GENERIC_ERROR.getCode(),
             ErrorMessages.GENERIC_ERROR.getMessage(),
             ex.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+  }
+
+  private HttpStatus buildStatus(int code) {
+    return HttpStatus.valueOf(code);
   }
 }

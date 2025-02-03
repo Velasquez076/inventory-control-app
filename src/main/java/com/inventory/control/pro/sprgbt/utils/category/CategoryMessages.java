@@ -10,6 +10,7 @@ import lombok.Getter;
 public enum CategoryMessages {
 
   CREATED_SUCCESS(0, "Category successfully created"),
+  UPDATE_SUCCESS(0, "Category successfully updated"),
   GET_ALL(200, "OK");
 
   private final int code;

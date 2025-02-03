@@ -10,5 +10,6 @@ public class Constants {
 
   public static final String RESOURCE = "categories";
   public static final String CREATE = "create";
+  public static final String UPDATE = "update/{id}";
   public static final String ALL = "all";
 }

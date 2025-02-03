@@ -3,6 +3,7 @@ package com.inventory.control.pro.sprgbt.controller.api.category.adapter;
 import static com.inventory.control.pro.sprgbt.controller.api.category.constants.Constants.ALL;
 import static com.inventory.control.pro.sprgbt.controller.api.category.constants.Constants.CREATE;
 import static com.inventory.control.pro.sprgbt.controller.api.category.constants.Constants.RESOURCE;
+import static com.inventory.control.pro.sprgbt.controller.api.category.constants.Constants.UPDATE;
 
 import com.inventory.control.pro.sprgbt.controller.api.category.dto.CategoryRequest;
 import com.inventory.control.pro.sprgbt.controller.api.category.dto.CategoryResponse;
@@ -18,7 +19,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -56,6 +59,17 @@ class CategoryController {
     var pageableResponse = mapperInput.toPageableResponse(categoryDomainPage);
     return new ResponseEntity<>(new WrapperResponse<>(CategoryMessages.GET_ALL.getCode(),
         CategoryMessages.GET_ALL.getMessage(), pageableResponse), HttpStatus.OK);
+  }
+
+  @PutMapping(path = UPDATE, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<WrapperResponse<CategoryResponse>> updateCategory(@PathVariable Long id,
+      @RequestBody CategoryRequest categoryRequest) {
+    log.info("Init update category...");
+    var category = categoryService.updateCategory(id, mapperInput.toDomain(categoryRequest));
+    var response = mapperInput.toResponse(category);
+    return new ResponseEntity<>(new WrapperResponse<>(CategoryMessages.UPDATE_SUCCESS.getCode(),
+        CategoryMessages.UPDATE_SUCCESS.getMessage(), response), HttpStatus.OK);
+
   }
 }
 
